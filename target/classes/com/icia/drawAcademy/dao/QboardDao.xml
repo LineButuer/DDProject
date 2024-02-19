@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.icia.drawAcademy.dao.QboardDao">
+	<select id = "getQboardList" resultType="qboard"
+		parameterType="HashMap">
+		SELECT * FROM blist
+		LIMIT #{pageNum}, #{listCnt}
+		</select>
+
+<insert id="insertQBoard" parameterType="qboard">
+		INSERT INTO Qboard
+		VALUES (null,#{b_name},#{b_writer},#{b_contents},
+		        #{b_password},#{b_comment})
+	</insert>
+
+
+
+
+
+
+
+
+
+
+</mapper>
