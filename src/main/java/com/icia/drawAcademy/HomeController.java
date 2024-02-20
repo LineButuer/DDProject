@@ -125,17 +125,17 @@ public class HomeController {
 
 	
 	// --------------------------------------------------------------------------------// 
-//	@GetMapping("qboard")
-//	public String qboardString (Integer pageNum, Model model, HttpSession session) {
-//		
-//		// service에서 기능을 가져와야함./
-//		
-//		log.info("qboard()");
-//		
-//		String view = Qserv.getQboardList(pageNum, model, session);
-//		
-//		return view;
-//	}
+	@GetMapping("qboard")
+	public String qboardString (Integer pageNum, Model model, HttpSession session) {
+		
+		// service에서 기능을 가져와야함./
+		
+		log.info("qboard()");
+		
+		String view = Qserv.getQboardList(pageNum, model, session);
+		
+		return view;
+	}
 //	
 	@GetMapping("qwrite")
 	public String qBoardWrite() {

@@ -27,7 +27,7 @@ public class QboardService {
 								Model model,
 								HttpSession session) {
 		
-		if(pageNum==1) {
+		if(pageNum==null) {
 			pageNum=1;
 		}
 		
@@ -40,7 +40,8 @@ public class QboardService {
 		List<QboardDto> qList = qDao.getQboardList(pMap);
 		
 		model.addAttribute("qList", qList);
-		
+		System.out.println(qList);
+		System.out.println(pMap);
 		//페이징 처리
 		String pageHtml= getPaging(pageNum, listCnt);
 		model.addAttribute("paging", pageHtml);
@@ -76,15 +77,18 @@ public class QboardService {
 		String msg = "";
 		String view ="";
 		
+		
 		try {
 			qDao.insertQBoard(qboard);
 			System.out.println("qboard" + qboard);
-			view = "redirect:/?";
+			view = "redirect:qboard?";
 			msg="게시물 등록 성공";
+			
+		
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			view = "redirect:/?";
+			view = "redirect:qboard?";
 			msg="게시물 등록 실패";
 		}
 		

@@ -24,6 +24,6 @@ $(function() {
 <a href ="signUp">[회원가입 이동]</a>
 <a href ="login">[로그인 이동]</a>
 <a href ="mypage">[마이페이지]</a>
-<a href ="qwrite">[질문게시판]</a>
+<a href ="qboard">[질문게시판]</a>
 </body>
 </html>

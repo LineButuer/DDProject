@@ -18,8 +18,4 @@ public class QboardDto {
 	private String b_password; // 글 비번
 	private String b_comment; // 글 댓글
 	
-	
-	
-	
-	
 }

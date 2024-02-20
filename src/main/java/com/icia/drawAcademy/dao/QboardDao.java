@@ -19,6 +19,8 @@ public interface QboardDao {
 	
 	// 게시물 정보 입력
 	void insertQBoard(QboardDto qboard);
+
+	QboardDto Qboardlist(QboardDto qboard);
 	
 	
 }
