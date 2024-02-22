@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="com.icia.drawAcademy.dao.QboardDao">
-	<select id = "getQboardList" resultType="qboard"
+	<select id="getQboardList" resultType="QueDTO"
 		parameterType="HashMap">
 		SELECT * FROM blist
 		LIMIT #{pageNum}, #{listCnt}
-		</select>
+	</select>
 
-<insert id="insertQBoard" parameterType="qboard">
-		INSERT INTO Qboard
-		VALUES (null,#{b_name},#{b_writer},#{b_contents},
-		        #{b_password},#{b_comment})
+	<insert id="insertQBoard" parameterType="QueDTO">
+		INSERT INTO Qboard (b_title, b_contents, b_password, m_id)
+		VALUES (#{b_title}, #{b_contents}, #{b_password}, #{m_id})
 	</insert>
 
 
+	<update id="updateQBoard" parameterType="QueDTO">
+		UPDATE Qboard
+		SET
+		b_title=#{b_title}, b_contents=#{b_contents},
+		b_password=#{b_password}
+		WHERE b_code=#{b_code}
+	</update>
+
+	<delete id="deleteQBoard" parameterType="Integer">
+		DELETE FROM Qboard
+		WHERE b_code=#{b_code}
+
+
+	</delete>
+
+	<select id="selectQBoard" parameterType="Integer"
+		resultType="QueDTO">
+		SELECT * FROM blist
+		WHERE b_code=#{b_code}
+	</select>
 
 
 

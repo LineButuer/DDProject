@@ -21,6 +21,12 @@ public interface QboardDao {
 	void insertQBoard(QboardDto qboard);
 
 	QboardDto Qboardlist(QboardDto qboard);
+
+	void updateQBoard(QboardDto qboard);
+
+	QboardDto selectQBoard(Integer b_code);
+
+	void deleteQBoard(Integer b_code);
 	
 	
 }
